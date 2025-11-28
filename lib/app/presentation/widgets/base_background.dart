@@ -1,4 +1,3 @@
-import 'package:base_project_flutter/gen/assets/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class BaseBackground extends StatelessWidget {

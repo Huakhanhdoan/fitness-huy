@@ -1,7 +1,6 @@
 import 'package:base_project_flutter/app/presentation/widgets/common_loading_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
 export 'package:get/get_rx/get_rx.dart';
@@ -40,15 +39,6 @@ class BaseController<T> extends SuperController {
   hideLoadingDialog() {
     CommonLoadingDialog.dismiss();
     _isLoadingDialogShowing.value = false;
-  }
-
-  showToast(String message) {
-    Fluttertoast.showToast(
-      msg: message,
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.BOTTOM,
-      timeInSecForIosWeb: 1,
-    );
   }
 
   @override

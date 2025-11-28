@@ -1,10 +1,10 @@
 name: base_project_flutter
-version: 1.0.0+1
-publish_to: none
 description: A new Flutter project.
+publish_to: none
+version: 1.0.0+1
 
 environment:
-  sdk: '>=3.3.4 <4.0.0'
+  sdk: ">=3.3.4 <4.0.0"
 
 dependencies:
   flutter:
@@ -14,32 +14,28 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   json_annotation: ^4.9.0
-  flutter_gen_runner: 5.3.1
+  flutter_gen_runner: ^5.12.0
   intl: any
   flutter_svg: ^2.0.10+1
-  fluttertoast: ^8.2.5
   flutter_smart_dialog: ^4.9.6+1
-  google_fonts: ^6.2.1
-  shared_preferences: ^2.2.3
-  flutter_secure_storage: ^4.2.1
-  jiffy: ^6.2.0
+  jiffy: ^6.4.4
 
   # Networking
   dio: ^5.2.1+1
   pretty_dio_logger: ^1.1.1
-  retrofit: ^4.0.1
+  retrofit: ^4.9.1
   firebase_core: ^4.2.1
   firebase_auth: ^6.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
-  json_serializable: ^6.7.1
-  build_runner: ^2.4.8
+  flutter_lints: ^6.0.0
+  json_serializable: ^6.11.3
+  build_runner: ^2.10.4
 
 dependency_overrides:
-  flutter_gen_core: 5.3.1
+  flutter_gen_core: ^5.12.0
 
 flutter:
   uses-material-design: true
