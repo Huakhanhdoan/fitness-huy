@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "488329847890",
+    "project_id": "fitness-huy",
+    "storage_bucket": "fitness-huy.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488329847890:android:c31c91972eb222bfeeab8b",
+        "android_client_info": {
+          "package_name": "com.example.base_project_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4lWmKu_5-uC_RldcmnCZV4TT70EWDa5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

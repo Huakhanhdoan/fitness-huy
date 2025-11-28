@@ -1,0 +1,10 @@
+{
+  "loading": "Loading...",
+  "common_error_message": "An error occurred. Please try again later.",
+  "network_error": "Network error. Please check your connection and try again.",
+  "server_error_message": "Server error. Please try again later.",
+  "s_0001": "Error s001",
+  "login": "Login",
+  "password": "Password",
+  "email": "Email"
+}
