@@ -20,8 +20,8 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<User> register(String email, String password) async {
-    final user = await authService.register(email, password);
+  Future<User> register(String email, String password, String name) async {
+    final user = await authService.register(email, password, name);
     return User(
       id: user?.uid ?? '',
       name: user?.displayName ?? '',

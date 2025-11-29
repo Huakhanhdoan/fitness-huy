@@ -18,7 +18,7 @@ class LoginView extends BaseGetView<LoginController> {
             title: "Welcome to Login!",
           ),
           Align(
-            alignment: Alignment.bottomCenter,
+            alignment: Alignment.center,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
               child: _buildFormContainer(context),
@@ -39,32 +39,34 @@ class LoginView extends BaseGetView<LoginController> {
           Radius.circular(32), // Rounded corners for the form container
         ),
       ),
-      child: Form(
-        key: _formKey,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Text(
-              "Login to your account",
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.green,
+      child: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                "Login to your account",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green,
+                ),
               ),
-            ),
-            const SizedBox(height: 8),
-            _buildAvatar(),
-            const SizedBox(height: 16),
-            _buildEmailField(),
-            const SizedBox(height: 16),
-            _buildPasswordField(),
-            const SizedBox(height: 8),
-            _buildForgotPassword(),
-            const SizedBox(height: 24),
-            _buildLoginButton(),
-            const SizedBox(height: 24),
-            _buildRegisterText(),
-          ],
+              const SizedBox(height: 8),
+              _buildAvatar(),
+              const SizedBox(height: 16),
+              _buildEmailField(),
+              const SizedBox(height: 16),
+              _buildPasswordField(),
+              const SizedBox(height: 8),
+              _buildForgotPassword(),
+              const SizedBox(height: 24),
+              _buildLoginButton(),
+              const SizedBox(height: 24),
+              _buildRegisterText(),
+            ],
+          ),
         ),
       ),
     );

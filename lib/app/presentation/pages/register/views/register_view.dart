@@ -9,6 +9,7 @@ class RegisterView extends BaseGetView<RegisterController> {
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -18,7 +19,7 @@ class RegisterView extends BaseGetView<RegisterController> {
         children: [
           const BaseBackground(title: "Create Account!"),
           Align(
-            alignment: Alignment.bottomCenter,
+            alignment: Alignment.center,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
               child: _buildFormContainer(context),
@@ -39,32 +40,34 @@ class RegisterView extends BaseGetView<RegisterController> {
           Radius.circular(32), // Rounded corners for the form container
         ),
       ),
-      child: Form(
-        key: _formKey,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Text(
-              "Register a new account",
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.green,
+      child: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                "Register a new account",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green,
+                ),
               ),
-            ),
-            const SizedBox(height: 8),
-            _buildAvatar(),
-            const SizedBox(height: 24),
-            _buildNameField(),
-            const SizedBox(height: 16),
-            _buildEmailField(),
-            const SizedBox(height: 16),
-            _buildPasswordField(),
-            const SizedBox(height: 24),
-            _buildRegisterButton(),
-            const SizedBox(height: 24),
-            _buildLoginText(),
-          ],
+              const SizedBox(height: 8),
+              _buildAvatar(),
+              const SizedBox(height: 24),
+              _buildNameField(),
+              const SizedBox(height: 16),
+              _buildEmailField(),
+              const SizedBox(height: 16),
+              _buildPasswordField(),
+              const SizedBox(height: 24),
+              _buildRegisterButton(),
+              const SizedBox(height: 24),
+              _buildLoginText(),
+            ],
+          ),
         ),
       ),
     );
@@ -83,6 +86,7 @@ class RegisterView extends BaseGetView<RegisterController> {
 
   Widget _buildNameField() {
     return TextFormField(
+      controller: nameController,
       decoration: InputDecoration(
         labelText: "Full Name",
         labelStyle: const TextStyle(color: Colors.green),
@@ -91,6 +95,8 @@ class RegisterView extends BaseGetView<RegisterController> {
         ),
         prefixIcon: const Icon(Icons.person, color: Colors.green),
       ),
+      validator: (value) =>
+          value != null && value.isNotEmpty ? null : 'Name is required',
     );
   }
 
@@ -133,8 +139,8 @@ class RegisterView extends BaseGetView<RegisterController> {
       child: ElevatedButton(
         onPressed: () async {
           if (_formKey.currentState?.validate() ?? false) {
-            await controller.register(
-                emailController.text, passwordController.text);
+            await controller.register(emailController.text,
+                passwordController.text, nameController.text);
           }
         },
         style: ElevatedButton.styleFrom(

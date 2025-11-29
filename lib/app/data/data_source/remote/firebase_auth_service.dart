@@ -16,11 +16,12 @@ class FirebaseAuthService {
   }
 
   // Đăng ký
-  Future<User?> register(String email, String password) async {
+  Future<User?> register(String email, String password, String name) async {
     final result = await _firebaseAuth.createUserWithEmailAndPassword(
       email: email,
       password: password,
     );
+    await result.user?.updateDisplayName(name);
     return result.user;
   }
 

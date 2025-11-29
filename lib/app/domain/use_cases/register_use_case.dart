@@ -9,13 +9,15 @@ class RegisterUseCase extends BaseUseCaseIO<RegisterParams, User> {
 
   @override
   Future<User> build(RegisterParams i) {
-    return repository.register(i.email, i.password);
+    return repository.register(i.email, i.password, i.name);
   }
 }
 
 class RegisterParams {
   final String email;
   final String password;
+  final String name;
 
-  RegisterParams({required this.email, required this.password});
+  RegisterParams(
+      {required this.email, required this.password, required this.name});
 }
