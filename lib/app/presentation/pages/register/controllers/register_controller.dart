@@ -13,7 +13,7 @@ class RegisterController extends BaseController {
     hideLoadingDialog();
     if (result.isSuccess) {
       Get.snackbar('Success', 'Registration successful');
-      NavigationUtils.toLogin();
+      NavigationUtils.toBottomNav();
       // Handle successful registration
     } else {
       Get.snackbar('Failed', "Registration failed");

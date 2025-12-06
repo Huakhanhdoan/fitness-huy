@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/home_controller.dart';
+import '../controllers/profile_controller.dart';
 
-class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
+class ProfileView extends GetView<ProfileController> {
+  const ProfileView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return const Center(
       child: Text(
-        'HomeView is working',
+        'ProfileView is working',
         style: TextStyle(fontSize: 20),
       ),
     );

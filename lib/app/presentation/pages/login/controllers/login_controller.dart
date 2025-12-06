@@ -31,7 +31,7 @@ class LoginController extends BaseController {
       _loginResult.value = result.data;
 
       // Data from login API
-      NavigationUtils.toHome();
+      NavigationUtils.toBottomNav();
       hideLoadingDialog();
     } else {
       hideLoadingDialog();
