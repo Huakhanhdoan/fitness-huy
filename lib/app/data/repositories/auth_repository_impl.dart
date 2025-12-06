@@ -5,11 +5,13 @@ import 'package:base_project_flutter/app/domain/repositories/auth_repository.dar
 // Fetch data from data source: API or Database local
 class AuthRepositoryImpl extends AuthRepository {
   final FirebaseAuthService authService;
+
   AuthRepositoryImpl({required this.authService});
 
   @override
   Future<User> signInWithEmailAndPassword(String email, String password) async {
-    final user = await authService.login(email, password);
+    final emailFormat = email.trim();
+    final user = await authService.login(emailFormat, password);
     // Map Firebase User to your User entity
     return User(
       id: user?.uid ?? '',
@@ -21,7 +23,8 @@ class AuthRepositoryImpl extends AuthRepository {
 
   @override
   Future<User> register(String email, String password, String name) async {
-    final user = await authService.register(email, password, name);
+    final emailFormat = email.trim();
+    final user = await authService.register(emailFormat, password, name);
     return User(
       id: user?.uid ?? '',
       name: user?.displayName ?? '',

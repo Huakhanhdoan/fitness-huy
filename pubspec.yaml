@@ -30,6 +30,12 @@ dependencies:
   # Bottom Navigation
   curved_labeled_navigation_bar: ^2.0.2
 
+  # Step Counter
+  pedometer: ^4.0.2
+  percent_indicator: ^4.2.3
+  permission_handler: ^11.3.1
+  shared_preferences: ^2.2.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
